@@ -1,0 +1,75 @@
+/* =========================================================
+   Componente: Badge de estado del expediente / costo
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge--registrado {
+  color: var(--status-registrado-fg);
+  background: var(--status-registrado-bg);
+}
+
+.badge--en-evaluacion {
+  color: var(--status-evaluacion-fg);
+  background: var(--status-evaluacion-bg);
+}
+
+.badge--observado,
+.badge--de-pago {
+  color: var(--status-observado-fg);
+  background: var(--status-observado-bg);
+}
+
+.badge--derivado {
+  color: var(--status-derivado-fg);
+  background: var(--status-derivado-bg);
+}
+
+.badge--aprobado,
+.badge--gratuito {
+  color: var(--status-aprobado-fg);
+  background: var(--status-aprobado-bg);
+}
+
+.badge--finalizado {
+  color: var(--status-finalizado-fg);
+  background: var(--status-finalizado-bg);
+}
+
+.badge--rechazado {
+  color: var(--status-rechazado-fg);
+  background: var(--status-rechazado-bg);
+}
+
+/* Etiqueta de código (TUPA-014) */
+.code-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+}
