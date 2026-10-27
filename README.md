@@ -18,11 +18,17 @@ docs/
   modelo-datos/   Modelo de la BD (DBML para dbdiagram.io y script PostgreSQL)
   diseno/         Capturas y enlace al prototipo de Figma
   actas/          Actas de planificación, revisión y retrospectiva por sprint
+src/              Frontend: HTML, CSS y JavaScript puros (sin paso de compilación)
 partes/           Parches de desarrollo por partes (ver COMMITS.md)
 .github/          Plantillas de issues y pull requests
 ```
 
-El código del frontend se agrega en `src/` conforme avanzan los sprints.
+## Frontend
+
+El frontend es un sitio estático de varias páginas, escrito en **HTML, CSS y JavaScript** sin
+frameworks ni paso de compilación. Reproduce el prototipo dinámico de Figma (sistema de diseño,
+catálogo del TUPA, asistente de solicitud en 4 pasos, seguimiento y panel de funcionarios).
+Se construye por partes: cada parte es un commit pequeño hecho por un integrante distinto.
 
 ## Metodología y flujo de trabajo
 
