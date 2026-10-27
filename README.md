@@ -19,7 +19,6 @@ docs/
   diseno/         Capturas y enlace al prototipo de Figma
   actas/          Actas de planificación, revisión y retrospectiva por sprint
 src/              Frontend: HTML, CSS y JavaScript puros (sin paso de compilación)
-partes/           Parches de desarrollo por partes (ver COMMITS.md)
 .github/          Plantillas de issues y pull requests
 ```
 
@@ -28,9 +27,8 @@ partes/           Parches de desarrollo por partes (ver COMMITS.md)
 El frontend es un sitio estático de varias páginas, escrito en **HTML, CSS y JavaScript** sin
 frameworks ni paso de compilación. Reproduce el prototipo dinámico de Figma (sistema de diseño,
 catálogo del TUPA, asistente de solicitud en 4 pasos, seguimiento y panel de funcionarios).
-Se construye por partes: cada parte es un commit pequeño hecho por un integrante distinto.
 
 ## Metodología y flujo de trabajo
 
-Las contribuciones se organizan por partes pequeñas (ver `COMMITS.md`), cada una con su propio
-commit y, cuando corresponde, su propia rama y pull request hacia `develop`.
+Trabajamos con Scrum adaptado a un equipo de tres integrantes: sprints cortos, revisión conjunta
+antes de cada entrega y retrospectiva al cierre de cada sprint.
