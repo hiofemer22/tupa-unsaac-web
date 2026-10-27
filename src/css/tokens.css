@@ -1,0 +1,129 @@
+/* =========================================================
+   Tokens de diseño — exportados del sistema de diseño en Figma
+   ========================================================= */
+
+:root {
+  /* Marca (vino UNSAAC) */
+  --brand-50: #fbf1f2;
+  --brand-100: #f5dde0;
+  --brand-200: #e9b8be;
+  --brand-300: #d98791;
+  --brand-400: #c25563;
+  --brand-500: #a32a3c;
+  --brand-600: #7a0c1c;
+  --brand-700: #630916;
+  --brand-800: #4c0711;
+  --brand-900: #36050c;
+
+  /* Dorado institucional */
+  --gold-100: #fbf3d6;
+  --gold-300: #e9cf7e;
+  --gold-500: #c59b27;
+  --gold-700: #8f6f12;
+
+  /* Neutros cálidos */
+  --neutral-0: #ffffff;
+  --neutral-50: #faf8f6;
+  --neutral-100: #f3f0ec;
+  --neutral-200: #e7e2db;
+  --neutral-300: #d3ccc2;
+  --neutral-400: #a59e93;
+  --neutral-500: #7a746a;
+  --neutral-600: #5a554d;
+  --neutral-700: #403c36;
+  --neutral-800: #2a2724;
+  --neutral-900: #171513;
+
+  /* Superficies */
+  --surface-page: var(--neutral-50);
+  --surface-card: var(--neutral-0);
+  --surface-sunken: var(--neutral-100);
+  --surface-brand: var(--brand-600);
+  --surface-brand-deep: var(--brand-800);
+  --surface-brand-subtle: var(--brand-50);
+  --surface-gold-subtle: var(--gold-100);
+  --surface-accent: var(--gold-500);
+  --surface-inverse: var(--neutral-900);
+
+  /* Texto */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: #6f6a61;
+  --text-inverse: var(--neutral-0);
+  --text-brand: var(--brand-600);
+  --text-gold: var(--gold-700);
+  --text-on-brand-muted: var(--brand-200);
+
+  /* Bordes */
+  --border-default: var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --border-brand: var(--brand-600);
+  --border-accent: var(--gold-500);
+  --border-focus: var(--brand-400);
+
+  /* Acciones */
+  --action-primary: var(--brand-600);
+  --action-primary-hover: var(--brand-700);
+
+  /* Estados del expediente (texto / fondo) */
+  --status-registrado-fg: #1d4ed8;
+  --status-registrado-bg: #e8effd;
+  --status-evaluacion-fg: #6d28d9;
+  --status-evaluacion-bg: #f0eafd;
+  --status-observado-fg: #b45309;
+  --status-observado-bg: #fef1dc;
+  --status-derivado-fg: #0e7490;
+  --status-derivado-bg: #e1f4f8;
+  --status-aprobado-fg: #147839;
+  --status-aprobado-bg: #e6f4ea;
+  --status-finalizado-fg: #166534;
+  --status-finalizado-bg: #ddf1e3;
+  --status-rechazado-fg: #b91c1c;
+  --status-rechazado-bg: #fdecec;
+
+  /* Espaciado */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Radios */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(23, 20, 18, 0.08);
+  --shadow-md: 0 6px 16px -2px rgba(23, 20, 18, 0.09);
+  --shadow-lg: 0 16px 40px -8px rgba(23, 20, 18, 0.14);
+
+  /* Tipografía */
+  --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* Layout */
+  --container-max: 1440px;
+  --gutter: 48px;
+  --navbar-height: 76px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --gutter: 16px;
+  }
+}
