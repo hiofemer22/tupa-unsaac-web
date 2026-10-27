@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitud registrada · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="tramite">
+    <div id="navbar"></div>
+
+    <main>
+      <div class="container">
+        <section class="card card--raised success" id="exito" hidden>
+          <span class="success__icon"><span data-icon="check" data-size="34"></span></span>
+          <h1 class="t-h1" style="margin-top: 20px">Solicitud registrada</h1>
+          <p class="success__lead" id="lead"></p>
+
+          <div class="success__code">
+            <div class="success__code-body">
+              <p class="success__code-label">Número de expediente</p>
+              <p class="success__code-value" id="codigo"></p>
+            </div>
+            <button type="button" class="btn btn--secondary btn--sm" id="copiar"></button>
+          </div>
+
+          <div class="success__facts" id="hechos"></div>
+
+          <div class="success__notice" id="aviso"></div>
+
+          <div class="success__actions">
+            <a class="btn btn--primary" id="ver" href="seguimiento.html">Hacer seguimiento</a>
+            <a class="btn btn--secondary" href="index.html">Volver al catálogo</a>
+          </div>
+        </section>
+
+        <section class="card card--raised success" id="no-existe" hidden>
+          <h1 class="t-h1">No encontramos esa solicitud</h1>
+          <p class="success__lead">El enlace no corresponde a un expediente registrado en este navegador. Puede iniciar un nuevo trámite o consultar el seguimiento.</p>
+          <div class="success__actions">
+            <a class="btn btn--primary" href="tramite-1-interesado.html">Iniciar trámite</a>
+            <a class="btn btn--secondary" href="seguimiento.html">Ir a seguimiento</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/expedientes.js"></script>
+    <script src="js/registrado.js"></script>
+  </body>
+</html>

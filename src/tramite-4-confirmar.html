@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paso 4 · Confirmar solicitud · Trámite · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="tramite">
+    <div id="navbar"></div>
+
+    <main>
+      <div id="tramite-head"></div>
+
+      <div class="container tramite-layout">
+        <form class="tramite-form" id="form" novalidate>
+          <section class="card tramite-card" aria-labelledby="r-int">
+            <div class="review__head">
+              <h2 class="t-h3" id="r-int">Interesado</h2>
+              <a class="review__edit" href="tramite-1-interesado.html" id="ed-1"></a>
+            </div>
+            <dl class="review__grid" id="rev-interesado"></dl>
+          </section>
+
+          <section class="card tramite-card" aria-labelledby="r-pet">
+            <div class="review__head">
+              <h2 class="t-h3" id="r-pet">Petición</h2>
+              <a class="review__edit" href="tramite-2-peticion.html" id="ed-2"></a>
+            </div>
+            <dl class="review__grid" id="rev-peticion"></dl>
+          </section>
+
+          <section class="card tramite-card" aria-labelledby="r-pago">
+            <div class="review__head">
+              <h2 class="t-h3" id="r-pago">Archivos y pago</h2>
+              <a class="review__edit" href="tramite-3-pago.html" id="ed-3"></a>
+            </div>
+            <dl class="review__grid" id="rev-pago"></dl>
+          </section>
+
+          <section class="declaration" aria-labelledby="t-decl">
+            <h2 class="t-h3" id="t-decl">Declaración jurada</h2>
+            <label class="check">
+              <input type="checkbox" id="declaracion" class="sr-only" />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text">
+                Declaro bajo juramento que los datos consignados son verdaderos y que los documentos adjuntos son copia fiel de los originales. Acepto que la
+                falsedad de esta declaración me sujeta a las responsabilidades que establece la ley.
+              </span>
+            </label>
+            <p class="field__error" id="error-declaracion" hidden></p>
+
+            <div class="field">
+              <div class="captcha">
+                <label class="check">
+                  <input type="checkbox" id="captcha" class="sr-only" />
+                  <span class="check__box" aria-hidden="true"></span>
+                  <span class="check__text">No soy un robot</span>
+                </label>
+                <span data-icon="shield-check" data-size="22"></span>
+              </div>
+              <p class="field__help">Verificación simulada para el prototipo (en producción se usará reCAPTCHA).</p>
+              <p class="field__error" id="error-captcha" hidden></p>
+            </div>
+          </section>
+
+          <div class="tramite-actions">
+            <a class="btn btn--secondary" href="tramite-3-pago.html">Atrás</a>
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="submit" id="guardar">Guardar solicitud</button>
+          </div>
+        </form>
+
+        <aside class="tramite-side" id="tramite-side"></aside>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/expedientes.js"></script>
+    <script src="js/tramite-common.js"></script>
+    <script src="js/tramite-4.js"></script>
+  </body>
+</html>

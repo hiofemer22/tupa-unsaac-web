@@ -418,6 +418,225 @@
   line-height: 20px;
 }
 
+/* Paso 4: revisión */
+.review__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.review__head h2 {
+  flex: 1;
+}
+
+.review__edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-brand);
+}
+
+.review__edit:hover {
+  text-decoration: underline;
+}
+
+.review__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+}
+
+.review__grid dt {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.review__grid dd {
+  margin: 2px 0 0;
+  font-size: 15px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+.review__grid .is-wide {
+  grid-column: 1 / -1;
+}
+
+.declaration {
+  padding: 24px 28px;
+  border: 1px solid var(--border-brand);
+  border-radius: var(--radius-lg);
+  background: var(--surface-brand-subtle);
+}
+
+.declaration > * + * {
+  margin-top: 16px;
+}
+
+.captcha {
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px 14px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+.captcha .check {
+  align-items: center;
+}
+
+.captcha .check__box {
+  width: 26px;
+  height: 26px;
+}
+
+.captcha .icon {
+  color: var(--text-tertiary);
+  margin-left: 10px;
+}
+
+/* Solicitud registrada */
+.success {
+  max-width: 760px;
+  margin: 48px auto 0;
+  padding: 40px 48px;
+  text-align: center;
+}
+
+.success__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--status-aprobado-bg);
+  color: var(--status-aprobado-fg);
+}
+
+.success__icon span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--status-aprobado-fg);
+  color: #fff;
+}
+
+.success__lead {
+  max-width: 560px;
+  margin: 12px auto 24px;
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--text-secondary);
+}
+
+.success__code {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto 28px;
+  padding: 18px 22px;
+  border: 1px solid var(--border-brand);
+  border-radius: var(--radius-lg);
+  background: var(--surface-brand-subtle);
+  text-align: left;
+}
+
+.success__code-body {
+  flex: 1;
+}
+
+.success__code-label {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.success__code-value {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.005em;
+  color: var(--text-brand);
+}
+
+.success__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.success__fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.success__fact .icon {
+  color: var(--text-brand);
+}
+
+.success__fact strong {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.success__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--status-observado-bg);
+  color: var(--status-observado-fg);
+  text-align: left;
+}
+
+.success__notice strong {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.success__notice span {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.success__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-default);
+}
+
 @media (max-width: 1000px) {
   .tramite-layout {
     grid-template-columns: minmax(0, 1fr);
