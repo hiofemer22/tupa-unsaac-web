@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paso 1 · Interesado · Trámite · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="tramite">
+    <div id="navbar"></div>
+
+    <main>
+      <div id="tramite-head"></div>
+
+      <div class="container tramite-layout">
+        <form class="tramite-form" id="form" novalidate>
+          <section class="card tramite-card" aria-labelledby="t-tipo">
+            <div class="tramite-card__head">
+              <h2 class="t-h2" id="t-tipo">Tipo de interesado</h2>
+              <p class="t-body-s text-secondary">Seleccione la condición con la que presenta esta solicitud.</p>
+            </div>
+            <div class="chip-row" id="tipos" role="group" aria-label="Tipo de interesado"></div>
+          </section>
+
+          <section class="card tramite-card" aria-labelledby="t-datos">
+            <h2 class="t-h2" id="t-datos">Datos del interesado</h2>
+
+            <div id="bloque-estudiante">
+              <div class="inline-search">
+                <div class="field suggest-wrap">
+                  <label class="field__label" for="codigoEst">Código de estudiante</label>
+                  <input class="field__control" id="codigoEst" type="text" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="Ej. 201234" />
+                  <span class="field__help">Ingrese los 6 dígitos de su código</span>
+                  <span class="field__error"></span>
+                  <div class="suggest" id="sugerencias" role="listbox" hidden></div>
+                </div>
+                <button class="btn btn--secondary" type="button" id="buscar">Buscar</button>
+              </div>
+
+              <div class="found" id="encontrado" hidden style="margin-top: 18px">
+                <p class="found__title" id="encontrado-titulo"></p>
+                <div class="field">
+                  <label class="field__label">Nombres <span data-icon="lock"></span></label>
+                  <input class="field__control" id="nombres-ro" type="text" readonly />
+                </div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label class="field__label">Facultad <span data-icon="lock"></span></label>
+                    <input class="field__control" id="facultad-ro" type="text" readonly />
+                  </div>
+                  <div class="field">
+                    <label class="field__label">Carrera profesional <span data-icon="lock"></span></label>
+                    <input class="field__control" id="carrera-ro" type="text" readonly />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid" id="bloque-otro" hidden>
+              <div class="field">
+                <label class="field__label" for="documento">DNI o RUC</label>
+                <input class="field__control" id="documento" type="text" inputmode="numeric" maxlength="11" autocomplete="off" />
+                <span class="field__error"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="nombres">Nombres y apellidos / Razón social</label>
+                <input class="field__control" id="nombres" type="text" autocomplete="name" />
+                <span class="field__error"></span>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="telefono">Teléfono móvil</label>
+                <input class="field__control" id="telefono" type="tel" inputmode="tel" maxlength="11" autocomplete="tel" placeholder="9XX XXX XXX" />
+                <span class="field__help">Para avisos del trámite</span>
+                <span class="field__error"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="correo">Correo electrónico</label>
+                <input class="field__control" id="correo" type="email" autocomplete="email" placeholder="usuario@correo.com" />
+                <span class="field__help">Aquí llegará su notificación</span>
+                <span class="field__error"></span>
+              </div>
+              <div class="field form-grid--full">
+                <label class="field__label" for="direccion">Dirección</label>
+                <input class="field__control" id="direccion" type="text" autocomplete="street-address" />
+                <span class="field__error"></span>
+              </div>
+            </div>
+
+            <label class="check consent">
+              <input type="checkbox" id="autoriza" />
+              <span class="check__box" data-icon="check"></span>
+              <span>Autorizo que la UNSAAC me notifique en el correo electrónico consignado, para efectos del presente procedimiento.</span>
+            </label>
+          </section>
+
+          <div class="tramite-actions">
+            <a class="btn btn--secondary" href="index.html" id="cancelar">Cancelar</a>
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="submit">Siguiente: datos de la petición</button>
+          </div>
+        </form>
+
+        <aside class="tramite-side" id="tramite-side"></aside>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/tramite-common.js"></script>
+    <script src="js/tramite-1.js"></script>
+  </body>
+</html>

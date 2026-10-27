@@ -1,0 +1,287 @@
+/* =========================================================
+   Flujo de trámite (asistente de 4 pasos) y pantalla de
+   solicitud registrada
+   ========================================================= */
+
+.tramite-head {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.tramite-head__inner {
+  padding-top: 32px;
+  padding-bottom: 28px;
+}
+
+.tramite-head__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.tramite-head__title {
+  margin-bottom: 24px;
+}
+
+/* Indicador de pasos */
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepper__step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stepper__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-card);
+  color: var(--text-tertiary);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.stepper__label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-tertiary);
+}
+
+.stepper__line {
+  flex: 1;
+  min-width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border-default);
+}
+
+.stepper__step.is-done .stepper__dot {
+  background: var(--surface-brand);
+  border-color: var(--surface-brand);
+  color: var(--text-inverse);
+}
+
+.stepper__step.is-done .stepper__label {
+  color: var(--text-brand);
+}
+
+.stepper__step.is-current .stepper__dot {
+  background: var(--surface-accent);
+  border-color: var(--surface-accent);
+  color: var(--text-primary);
+}
+
+.stepper__step.is-current .stepper__label {
+  color: var(--text-primary);
+}
+
+.stepper__line.is-done {
+  background: var(--surface-brand);
+}
+
+/* Estructura de dos columnas */
+.tramite-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 32px;
+  align-items: start;
+  padding-top: 32px;
+}
+
+.tramite-form > * + * {
+  margin-top: 24px;
+}
+
+.tramite-side {
+  position: sticky;
+  top: calc(var(--navbar-height) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tramite-card {
+  padding: 28px;
+}
+
+.tramite-card > * + * {
+  margin-top: 18px;
+}
+
+.tramite-card__head > * + * {
+  margin-top: 4px;
+}
+
+.tramite-card .t-h2,
+.tramite-card .t-h3 {
+  margin: 0;
+}
+
+.tramite-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tramite-actions .spacer {
+  flex: 1;
+}
+
+/* Resumen lateral */
+.side-summary {
+  padding: 24px;
+}
+
+.side-summary__title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.side-summary dl {
+  margin: 0;
+}
+
+.side-summary dt {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.side-summary dd {
+  margin: 2px 0 14px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.side-summary dd:last-child {
+  margin-bottom: 0;
+}
+
+.side-summary dd.side-summary__total {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--text-brand);
+}
+
+/* Paso 1: datos encontrados */
+.found {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-brand-subtle);
+}
+
+.found__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--status-aprobado-fg);
+}
+
+.field__label .icon {
+  color: var(--text-tertiary);
+}
+
+.inline-search {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.inline-search .field {
+  flex: 1;
+}
+
+.inline-search .btn {
+  margin-top: 26px;
+}
+
+.consent {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+@media (max-width: 1000px) {
+  .tramite-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tramite-side {
+    position: static;
+  }
+}
+
+/* Sugerencias de autocompletado (código de estudiante) */
+.suggest-wrap {
+  position: relative;
+}
+
+.suggest {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-lg);
+}
+
+.suggest__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.suggest__item:hover,
+.suggest__item.is-active {
+  background: var(--surface-brand-subtle);
+}
+
+.suggest__code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-brand);
+}
+
+.suggest__name {
+  color: var(--text-secondary);
+}
