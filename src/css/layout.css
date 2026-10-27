@@ -1,0 +1,190 @@
+/* =========================================================
+   Layout público: barra de navegación y pie de página
+   ========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface-brand);
+  border-bottom: 2px solid var(--border-accent);
+  color: var(--text-inverse);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: var(--container-max);
+  height: calc(var(--navbar-height) - 2px);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.navbar__brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.navbar__brand-name {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--text-inverse);
+}
+
+.navbar__brand-sub {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-on-brand-muted);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.navbar__link {
+  position: relative;
+  padding: 26px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-on-brand-muted);
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover,
+.navbar__link.is-active {
+  color: var(--text-inverse);
+}
+
+.navbar__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--surface-accent);
+}
+
+.navbar__toggle {
+  display: none;
+}
+
+/* Enlace de acceso para funcionarios dentro del menú móvil */
+.navbar__link--cta {
+  display: none;
+}
+
+/* Pie de página */
+.footer {
+  background: var(--surface-inverse);
+  color: var(--neutral-300);
+  margin-top: 64px;
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 48px var(--gutter) 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.footer__brand-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer__brand-head img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.footer__brand-name {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--text-inverse);
+}
+
+.footer__info {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--brand-200);
+}
+
+.footer__info .icon {
+  margin-top: 2px;
+  color: var(--brand-300);
+}
+
+.footer__title {
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__list a {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--brand-200);
+}
+
+.footer__list a:hover {
+  color: var(--text-inverse);
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--neutral-700);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--brand-200);
+}
