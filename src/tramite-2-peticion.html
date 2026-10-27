@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paso 2 · Petición · Trámite · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="tramite">
+    <div id="navbar"></div>
+
+    <main>
+      <div id="tramite-head"></div>
+
+      <div class="container tramite-layout">
+        <form class="tramite-form" id="form" novalidate>
+          <section class="card tramite-card" aria-labelledby="t-doc">
+            <h2 class="t-h2" id="t-doc">Datos del documento</h2>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="tipoDoc">Tipo de documento</label>
+                <select class="field__control" id="tipoDoc"></select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="nroDoc">N.° de documento</label>
+                <input class="field__control" id="nroDoc" type="text" maxlength="20" />
+                <span class="field__help">Correlativo propio, si lo tiene</span>
+              </div>
+              <div class="field form-grid--full">
+                <label class="field__label" for="asunto">Asunto</label>
+                <input class="field__control" id="asunto" type="text" maxlength="250" placeholder="Ej. Solicito constancia de estudios del semestre 2026-2" />
+                <span class="field__error"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card tramite-card" aria-labelledby="t-tramite">
+            <div class="tramite-card__head">
+              <h2 class="t-h2" id="t-tramite">¿Qué trámite solicita?</h2>
+              <p class="t-body-s text-secondary">Filtre por categoría y marque el procedimiento. Puede ver los requisitos de cada uno.</p>
+            </div>
+
+            <div class="filter-row">
+              <div class="field">
+                <label class="field__label" for="categoria">Categoría</label>
+                <select class="field__control" id="categoria"></select>
+              </div>
+              <label class="search-box">
+                <span data-icon="search"></span>
+                <span class="sr-only">Buscar trámite</span>
+                <input id="buscar" type="search" placeholder="Buscar trámite" autocomplete="off" />
+              </label>
+            </div>
+
+            <div class="field" id="campo-tramites">
+              <div id="lista" class="pick-list" role="group" aria-label="Trámites disponibles"></div>
+              <span class="field__error"></span>
+            </div>
+          </section>
+
+          <div class="tramite-actions">
+            <a class="btn btn--secondary" href="tramite-1-interesado.html">Anterior</a>
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="submit">Siguiente: archivos y pago</button>
+          </div>
+        </form>
+
+        <aside class="tramite-side" id="tramite-side"></aside>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/tramite-common.js"></script>
+    <script src="js/tramite-2.js"></script>
+  </body>
+</html>
