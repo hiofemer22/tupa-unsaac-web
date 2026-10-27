@@ -1,0 +1,87 @@
+/* =========================================================
+   Componente: Tarjeta de procedimiento (catálogo)
+   ========================================================= */
+
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.proc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.proc-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.proc-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.proc-card__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.proc-card__unit {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-tertiary);
+}
+
+.proc-card__desc {
+  flex: 1;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.proc-card__foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-default);
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.proc-card__cost {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-brand);
+}
+
+.proc-card__cost--free {
+  color: var(--status-aprobado-fg);
+}
+
+@media (max-width: 1100px) {
+  .proc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .proc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

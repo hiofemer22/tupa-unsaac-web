@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo TUPA · UNSAAC</title>
+    <meta name="description" content="Consulte requisitos, costos y plazos de los procedimientos del TUPA de la UNSAAC e inicie su solicitud en línea." />
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="catalogo">
+    <div id="navbar"></div>
+
+    <main>
+
+      <section class="catalogo container" id="catalogo">
+        <div class="catalogo__head">
+          <div>
+            <h2 class="t-h1">Catálogo de procedimientos</h2>
+            <p id="catalogo-resumen"></p>
+          </div>
+        </div>
+
+        <div class="proc-grid" id="grilla" aria-live="polite"></div>
+        <div class="catalogo__empty" id="vacio" hidden>
+          <p class="t-h3">No encontramos procedimientos con esos criterios</p>
+          <p class="t-body-s">Pruebe con otra palabra o quite los filtros aplicados.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/catalogo.js"></script>
+  </body>
+</html>

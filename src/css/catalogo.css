@@ -1,0 +1,52 @@
+/* =========================================================
+   Página: Catálogo de procedimientos
+   ========================================================= */
+
+.catalogo {
+  padding-top: 64px;
+}
+
+.catalogo__head {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.catalogo__head p {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.catalogo__sort {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.catalogo__sort .field__control {
+  padding: 10px 40px 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  width: auto;
+}
+
+.catalogo__filters {
+  margin-bottom: 28px;
+}
+
+.catalogo__empty {
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+}
+
+.catalogo__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
