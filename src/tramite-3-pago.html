@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paso 3 · Archivos y pago · Trámite · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="tramite">
+    <div id="navbar"></div>
+
+    <main>
+      <div id="tramite-head"></div>
+
+      <div class="container tramite-layout">
+        <form class="tramite-form" id="form" novalidate>
+          <section class="card tramite-card" aria-labelledby="t-pago">
+            <div class="tramite-card__head">
+              <h2 class="t-h2" id="t-pago">Pago de la tasa</h2>
+              <p class="t-body-s text-secondary" id="pago-sub">Pague primero en el portal de recaudación y luego registre aquí su clave de pago.</p>
+            </div>
+
+            <div id="sin-pago" class="callout callout--success" hidden>
+              <span data-icon="circle-check"></span>
+              <span>Los procedimientos seleccionados son gratuitos: no necesita registrar un pago.</span>
+            </div>
+
+            <div id="con-pago">
+              <div class="pay-box">
+                <div class="pay-box__text">
+                  <strong id="monto-texto"></strong>
+                  <span id="concepto-texto"></span>
+                </div>
+                <button class="btn btn--primary" type="button" id="ir-pagar">Ir a pagar</button>
+              </div>
+
+              <div class="field" style="margin-top: 18px">
+                <span class="field__label" id="lbl-medio">Medio de pago utilizado</span>
+                <div class="chip-row" id="medios" role="group" aria-labelledby="lbl-medio"></div>
+              </div>
+
+              <div class="form-grid" style="margin-top: 18px">
+                <div class="field">
+                  <label class="field__label" for="clave">Clave de pago</label>
+                  <input class="field__control" id="clave" type="text" inputmode="numeric" maxlength="12" autocomplete="off" />
+                  <span class="field__help">Figura en el comprobante que le entrega el portal de recaudación</span>
+                  <span class="field__error"></span>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="fecha">Fecha de pago</label>
+                  <input class="field__control" id="fecha" type="date" />
+                  <span class="field__error"></span>
+                </div>
+              </div>
+
+              <button class="btn btn--ghost btn--sm" type="button" id="ayuda-clave" style="margin-top: 12px; padding-left: 0">
+                <span data-icon="info"></span> ¿Dónde encuentro mi clave de pago?
+              </button>
+              <div class="callout callout--brand" id="ayuda-clave-texto" hidden style="margin-top: 8px">
+                <p>La clave de pago aparece en el voucher o comprobante que emite el portal de recaudación, la caja o la aplicación que usó (Caja Cusco, BiPay o Niubiz). Es un número que identifica su pago.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card tramite-card" aria-labelledby="t-docs">
+            <div class="tramite-card__head">
+              <h2 class="t-h2" id="t-docs">Documentos adjuntos</h2>
+              <p class="t-body-s text-secondary" id="docs-sub">Adjunte el voucher de pago (obligatorio) y los requisitos del procedimiento.</p>
+            </div>
+
+            <div class="file-list" id="archivos" aria-live="polite"></div>
+
+            <label class="dropzone" id="zona" for="archivo">
+              <span data-icon="upload" data-size="28"></span>
+              <span class="dropzone__title">Arrastre sus archivos aquí o haga clic para seleccionar</span>
+              <span class="dropzone__hint">PDF, ZIP o RAR · máximo 50 MB en total</span>
+              <input type="file" id="archivo" class="sr-only" multiple accept=".pdf,.zip,.rar" />
+            </label>
+            <p class="upload-errors" id="errores-carga" role="alert" hidden></p>
+            <button class="btn btn--ghost btn--sm" type="button" id="demo" style="padding-left: 0">Cargar archivos de ejemplo (demostración)</button>
+
+            <div class="usage" id="uso">
+              <div class="usage__row"><span>Espacio utilizado</span><span id="uso-texto"></span></div>
+              <div class="progress progress--track"><div class="progress__bar" id="uso-barra"></div></div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="aclaracion">Aclare su petición (opcional)</label>
+              <textarea class="field__control" id="aclaracion" maxlength="180" rows="3" placeholder="Detalle lo que necesita que sepa la oficina que evaluará su solicitud."></textarea>
+              <span class="field__counter" id="contador">0 / 180 caracteres</span>
+            </div>
+
+            <div class="callout callout--warning" id="aviso-voucher">
+              <span data-icon="triangle-alert"></span>
+              <span>El voucher de pago es obligatorio. Sin él no podrá continuar con el registro de la solicitud.</span>
+            </div>
+          </section>
+
+          <div class="tramite-actions">
+            <a class="btn btn--secondary" href="tramite-2-peticion.html">Atrás</a>
+            <span class="spacer"></span>
+            <button class="btn btn--primary" type="submit">Siguiente: revisar y confirmar</button>
+          </div>
+        </form>
+
+        <aside class="tramite-side" id="tramite-side"></aside>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/tramite-common.js"></script>
+    <script src="js/tramite-3.js"></script>
+  </body>
+</html>

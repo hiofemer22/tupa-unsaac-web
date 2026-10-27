@@ -305,6 +305,119 @@
   margin-bottom: 0;
 }
 
+/* Paso 3: pago y archivos */
+.pay-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-brand);
+  border-radius: var(--radius-md);
+  background: var(--surface-brand-subtle);
+}
+
+.pay-box__text {
+  flex: 1;
+}
+
+.pay-box__text strong {
+  display: block;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.pay-box__text span {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+.file-row > .icon {
+  color: var(--text-brand);
+}
+
+.file-row__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-row__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.file-row__meta {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.file-row__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--status-aprobado-bg);
+  color: var(--status-aprobado-fg);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.file-row__remove {
+  display: inline-flex;
+  padding: 4px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-tertiary);
+}
+
+.file-row__remove:hover {
+  background: var(--surface-card);
+  color: var(--status-rechazado-fg);
+}
+
+.usage__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.usage.is-over .usage__row span:last-child {
+  color: var(--status-rechazado-fg);
+  font-weight: 600;
+}
+
+.upload-errors {
+  color: var(--status-rechazado-fg);
+  font-size: 13px;
+  line-height: 20px;
+}
+
 @media (max-width: 1000px) {
   .tramite-layout {
     grid-template-columns: minmax(0, 1fr);
