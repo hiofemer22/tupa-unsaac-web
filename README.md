@@ -6,9 +6,9 @@ gestión para funcionarios.
 
 ## Integrantes
 
-- Integrante A
-- Integrante B
-- Integrante C
+- Dany Huacani de la Cruz — 081561
+- Jhamil Jhonatan Huahualuque Vargas — 210980
+- Luis Angel Mogrovejo Ccorimanya — 220961
 
 ## Estructura del repositorio
 
