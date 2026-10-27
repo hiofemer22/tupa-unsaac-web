@@ -198,3 +198,46 @@
 .progress--track .progress__bar {
   background: var(--surface-brand);
 }
+
+/* Aviso emergente (toast) */
+.toast-host {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 380px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--neutral-800);
+  color: var(--text-inverse);
+  font-size: 14px;
+  line-height: 20px;
+  box-shadow: var(--shadow-lg);
+  animation: toast-in 0.2s ease-out;
+}
+
+.toast .icon {
+  margin-top: 1px;
+  color: var(--gold-300);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
