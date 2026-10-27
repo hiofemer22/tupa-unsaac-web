@@ -12,6 +12,44 @@
     <div id="navbar"></div>
 
     <main>
+      <section class="hero">
+        <div class="hero__inner container">
+          <div>
+            <span class="hero__eyebrow" id="hero-eyebrow"></span>
+            <h1 class="t-hero hero__title">Sus trámites universitarios, sin filas ni papeles</h1>
+            <p class="hero__lead">
+              Consulte requisitos, costos y plazos de los procedimientos del TUPA, inicie su solicitud en línea y siga el estado de su expediente en tiempo real.
+            </p>
+
+            <form class="hero__search" id="hero-search" role="search">
+              <span id="hero-search-icon"></span>
+              <label class="sr-only" for="hero-q">Buscar trámite</label>
+              <input id="hero-q" type="search" placeholder="Busque por nombre, código o unidad — ej. “constancia de estudios”" autocomplete="off" />
+              <button class="btn btn--primary" type="submit">Buscar trámite</button>
+            </form>
+
+            <dl class="hero__stats">
+              <div class="hero__stat"><dd id="stat-total">0</dd><dt>procedimientos publicados</dt></div>
+              <div class="hero__stat"><dd>24 / 7</dd><dt>solicitud en línea</dt></div>
+              <div class="hero__stat"><dd>100 %</dd><dt>seguimiento con código</dt></div>
+            </dl>
+          </div>
+
+          <aside class="quick" aria-labelledby="quick-title">
+            <h2 class="quick__title" id="quick-title"><span id="quick-icon"></span>¿Ya inició un trámite?</h2>
+            <p class="quick__text">Ingrese el código de su expediente para ver en qué etapa se encuentra.</p>
+            <form id="quick-form" class="stack-16" novalidate>
+              <div class="field" id="quick-field">
+                <label class="field__label" for="quick-code">Código de seguimiento</label>
+                <input class="field__control" id="quick-code" type="text" placeholder="EXP-2026-000123" autocomplete="off" />
+                <span class="field__help">Lo recibió al registrar su solicitud</span>
+                <span class="field__error">Ingrese el código de su expediente.</span>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Consultar expediente</button>
+            </form>
+          </aside>
+        </div>
+      </section>
 
       <section class="catalogo container" id="catalogo">
         <div class="catalogo__head">
@@ -37,5 +75,6 @@
     <script src="js/format.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/catalogo.js"></script>
+    <script src="js/hero.js"></script>
   </body>
 </html>

@@ -1,0 +1,129 @@
+/* =========================================================
+   Sección principal (hero) del catálogo
+   ========================================================= */
+
+.hero {
+  background: var(--surface-brand-deep);
+  color: var(--text-inverse);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px;
+  gap: 64px;
+  align-items: start;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--gold-700);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--gold-300);
+}
+
+.hero__title {
+  max-width: 600px;
+  margin-top: 28px;
+  color: var(--text-inverse);
+}
+
+.hero__lead {
+  max-width: 640px;
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 27px;
+  color: var(--brand-200);
+}
+
+.hero__search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 760px;
+  margin-top: 32px;
+  padding: 8px 8px 8px 20px;
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-tertiary);
+}
+
+.hero__search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.hero__search input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.hero__stats {
+  display: flex;
+  gap: 48px;
+  margin: 40px 0 0;
+}
+
+.hero__stat dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: var(--gold-500);
+}
+
+.hero__stat dt {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--brand-200);
+}
+
+.quick {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+}
+
+.quick__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.quick__title .icon {
+  color: var(--text-brand);
+}
+
+.quick__text {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1100px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
