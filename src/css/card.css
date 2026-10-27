@@ -1,0 +1,200 @@
+/* =========================================================
+   Componentes de contenedor: tarjeta, aviso (callout),
+   indicador (KPI) y barra de progreso
+   ========================================================= */
+
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card--raised {
+  box-shadow: var(--shadow-md);
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.002em;
+}
+
+.card__subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.stack-16 > * + * {
+  margin-top: 16px;
+}
+
+.stack-20 > * + * {
+  margin-top: 20px;
+}
+
+/* Avisos */
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.callout__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.callout--gold {
+  background: var(--surface-gold-subtle);
+  border: 1px solid var(--border-accent);
+  color: var(--neutral-700);
+}
+
+.callout--gold .callout__title {
+  color: var(--neutral-900);
+}
+
+.callout--gold .callout__title .icon {
+  color: var(--text-gold);
+}
+
+.callout--brand {
+  background: var(--surface-brand-subtle);
+  color: var(--text-secondary);
+}
+
+.callout--brand .callout__title {
+  color: var(--text-primary);
+}
+
+.callout--brand .callout__title .icon {
+  color: var(--text-brand);
+}
+
+.callout--success {
+  background: var(--status-aprobado-bg);
+  color: var(--status-aprobado-fg);
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+}
+
+.callout--warning {
+  background: var(--status-observado-bg);
+  color: var(--status-observado-fg);
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+}
+
+/* Indicadores */
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+.kpi__label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.kpi__value {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: -0.005em;
+}
+
+.kpi__delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.kpi__delta--ok {
+  color: var(--status-aprobado-fg);
+}
+
+.kpi__delta--info {
+  color: var(--status-evaluacion-fg);
+}
+
+.kpi__delta--warn {
+  color: var(--status-observado-fg);
+}
+
+.kpi__delta--bad {
+  color: var(--status-rechazado-fg);
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .kpi-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Barra de progreso */
+.progress {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--surface-accent);
+}
+
+.progress--track {
+  background: var(--surface-sunken);
+}
+
+.progress--track .progress__bar {
+  background: var(--surface-brand);
+}

@@ -1,0 +1,318 @@
+/* =========================================================
+   Componentes de formulario: campo, select, textarea,
+   checkbox, chips de selección, interruptor y zona de carga
+   ========================================================= */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field__label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field__control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field__control::placeholder {
+  color: var(--text-tertiary);
+}
+
+.field__control:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--brand-100);
+}
+
+.field__control[readonly] {
+  background: var(--surface-sunken);
+  color: var(--text-secondary);
+  border-color: var(--border-default);
+}
+
+.field__help {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.field__error {
+  display: none;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--status-rechazado-fg);
+}
+
+.field--error .field__control {
+  border-color: var(--status-rechazado-fg);
+  background: var(--status-rechazado-bg);
+}
+
+.field--error .field__error {
+  display: block;
+}
+
+select.field__control {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%235a554d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+textarea.field__control {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.field__counter {
+  align-self: flex-end;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.field__counter.is-limit {
+  color: var(--status-rechazado-fg);
+}
+
+/* Campo con icono (buscadores) */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+  color: var(--text-tertiary);
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Casilla de verificación personalizada */
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-primary);
+}
+
+.check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.check__box {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-card);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.check input:checked + .check__box {
+  background: var(--surface-brand);
+  border-color: var(--surface-brand);
+  color: var(--text-inverse);
+}
+
+.check__box:empty::after {
+  content: "";
+  width: 6px;
+  height: 11px;
+  margin-top: -2px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.check input:checked + .check__box:empty::after {
+  opacity: 1;
+}
+
+.check input:focus-visible + .check__box {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Chips de selección (tipo de interesado, filtros) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.chip:hover {
+  background: var(--surface-sunken);
+}
+
+.chip.is-active,
+.chip[aria-pressed="true"] {
+  background: var(--surface-brand);
+  border-color: var(--surface-brand);
+  color: var(--text-inverse);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Interruptor */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.toggle input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle__track {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  background: var(--neutral-300);
+  transition: background-color 0.15s ease;
+  pointer-events: none;
+}
+
+.toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.toggle input:checked + .toggle__track {
+  background: var(--surface-brand);
+}
+
+.toggle input:checked + .toggle__track::after {
+  transform: translateX(14px);
+}
+
+.toggle input:focus-visible + .toggle__track {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Zona de carga de archivos */
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 20px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+  text-align: center;
+  color: var(--text-brand);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.dropzone:hover,
+.dropzone.is-over {
+  border-color: var(--border-brand);
+  background: var(--surface-brand-subtle);
+}
+
+.dropzone__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-primary);
+}
+
+.dropzone__hint {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-grid--full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
