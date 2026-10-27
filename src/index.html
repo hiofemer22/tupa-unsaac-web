@@ -57,12 +57,26 @@
             <h2 class="t-h1">Catálogo de procedimientos</h2>
             <p id="catalogo-resumen"></p>
           </div>
+          <div class="catalogo__sort">
+            <label class="sr-only" for="orden">Ordenar procedimientos</label>
+            <select class="field__control" id="orden">
+              <option value="populares">Ordenar: Más solicitados</option>
+              <option value="nombre">Ordenar: Nombre (A–Z)</option>
+              <option value="costo">Ordenar: Menor costo</option>
+              <option value="plazo">Ordenar: Menor plazo</option>
+            </select>
+          </div>
         </div>
+
+        <div class="chip-row catalogo__filters" id="filtros" role="group" aria-label="Filtrar por categoría"></div>
 
         <div class="proc-grid" id="grilla" aria-live="polite"></div>
         <div class="catalogo__empty" id="vacio" hidden>
           <p class="t-h3">No encontramos procedimientos con esos criterios</p>
           <p class="t-body-s">Pruebe con otra palabra o quite los filtros aplicados.</p>
+        </div>
+        <div class="catalogo__more">
+          <button class="btn btn--secondary" id="mas" type="button">Cargar más procedimientos</button>
         </div>
       </section>
     </main>
