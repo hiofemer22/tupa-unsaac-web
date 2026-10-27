@@ -1,0 +1,135 @@
+/* =========================================================
+   Tablas de datos (seguimiento, bandeja, mantenimiento)
+   ========================================================= */
+
+.table-wrap {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.table th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--surface-sunken);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-default);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr:hover td {
+  background: var(--surface-page);
+}
+
+.table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table td.is-muted,
+.table .is-muted {
+  color: var(--text-secondary);
+}
+
+.table .cell-title {
+  font-weight: 500;
+}
+
+.table .cell-sub {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--border-default);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pager__btn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pager__btn:hover:not(:disabled) {
+  background: var(--surface-brand-subtle);
+}
+
+.pager__btn.is-active {
+  background: var(--surface-brand);
+  border-color: var(--surface-brand);
+  color: #fff;
+}
+
+.pager__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Indicador de plazo en tabla */
+.plazo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.plazo-chip.is-late {
+  color: var(--status-rechazado-fg);
+}
+
+.plazo-chip.is-today {
+  color: var(--status-observado-fg);
+}
+
+.table .row-link,
+.plazo-chip {
+  white-space: nowrap;
+}

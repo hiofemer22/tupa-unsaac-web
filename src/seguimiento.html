@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seguimiento de expediente · UNSAAC</title>
+    <link rel="icon" href="assets/escudo-unsaac.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-nav="seguimiento">
+    <div id="navbar"></div>
+
+    <main>
+      <section class="seg-head">
+        <div class="container seg-head__inner">
+          <h1 class="t-h1">Seguimiento de expediente</h1>
+          <p class="seg-head__lead">Consulte en qué unidad está su trámite, su estado actual y cuántos días de plazo le quedan.</p>
+
+          <form class="seg-form" id="form-busqueda" novalidate>
+            <div class="field">
+              <label class="field__label" for="anio">Año</label>
+              <select class="field__control" id="anio">
+                <option>2026</option>
+                <option>2025</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field__label" for="por">Buscar por</label>
+              <select class="field__control" id="por">
+                <option value="expediente">N.° de expediente</option>
+                <option value="codigo">Código de estudiante</option>
+                <option value="documento">DNI / RUC</option>
+              </select>
+            </div>
+            <div class="field seg-form__valor">
+              <label class="field__label" for="valor">Valor</label>
+              <input class="field__control" id="valor" type="text" autocomplete="off" placeholder="Ej. 000123 o EXP-2026-000123" />
+              <span class="field__error"></span>
+            </div>
+            <button class="btn btn--accent" type="submit" id="buscar"></button>
+          </form>
+        </div>
+      </section>
+
+      <div class="container seg-body">
+        <p class="seg-hint" id="ayuda-inicial">
+          Ingrese su número de expediente para ver el detalle. Para probar, use <button type="button" class="link-btn" id="usar-ejemplo">EXP-2026-000123</button>.
+        </p>
+
+        <section id="resultados" class="card card--flush seg-results" hidden aria-live="polite">
+          <div class="seg-results__head">
+            <h2 class="t-h3" id="resultados-titulo"></h2>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="tabla-resultados">
+              <thead>
+                <tr>
+                  <th>N.° exp.</th>
+                  <th>Fecha</th>
+                  <th>Documento</th>
+                  <th class="num">Folios</th>
+                  <th>Interesado</th>
+                  <th>Destino</th>
+                  <th>Estado</th>
+                  <th><span class="sr-only">Acciones</span></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="sin-resultados" class="card seg-empty" hidden>
+          <h2 class="t-h3">No encontramos expedientes</h2>
+          <p class="text-secondary" id="sin-resultados-texto"></p>
+        </section>
+
+        <section id="detalle" class="seg-detail" hidden></section>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/expedientes.js"></script>
+    <script src="js/seguimiento.js"></script>
+  </body>
+</html>

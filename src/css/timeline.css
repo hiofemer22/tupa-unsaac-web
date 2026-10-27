@@ -1,0 +1,92 @@
+/* =========================================================
+   Línea de tiempo del historial de un expediente
+   ========================================================= */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  padding-bottom: 22px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background: var(--border-default);
+}
+
+.timeline__item:last-child::before {
+  display: none;
+}
+
+.timeline__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2px solid var(--border-strong);
+  color: var(--text-tertiary);
+}
+
+.timeline__item.is-done .timeline__dot {
+  background: var(--status-aprobado-fg);
+  border-color: var(--status-aprobado-fg);
+  color: #fff;
+}
+
+.timeline__item.is-current .timeline__dot {
+  background: var(--surface-brand);
+  border-color: var(--surface-brand);
+  color: #fff;
+  box-shadow: 0 0 0 4px var(--brand-100);
+}
+
+.timeline__item.is-warn .timeline__dot {
+  background: var(--status-observado-fg);
+  border-color: var(--status-observado-fg);
+  color: #fff;
+}
+
+.timeline__item.is-bad .timeline__dot {
+  background: var(--status-rechazado-fg);
+  border-color: var(--status-rechazado-fg);
+  color: #fff;
+}
+
+.timeline__title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.timeline__meta {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.timeline__detail {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
